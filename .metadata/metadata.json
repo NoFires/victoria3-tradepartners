@@ -1,0 +1,12 @@
+{
+  "name" : "Trade Partners",
+  "id" : "com.cat.trade-partners",
+  "version" : "0.1.0",
+  "game_id" : "victoria3",
+  "picture" : "thumbnail.png",
+  "supported_game_version" : "1.13.*",
+  "short_description" : "Gain an insight into your trade partners",
+  "tags" : [],
+  "relationships" : [],
+  "game_custom_data" : {}
+}

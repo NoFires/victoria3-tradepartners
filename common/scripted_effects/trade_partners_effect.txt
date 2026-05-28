@@ -1,0 +1,38 @@
+trade_partners_set_import_partners = {
+	clear_variable_list = trade_partners_all_markets_import
+	save_temporary_scope_as = target_country
+	ordered_market = {
+		order_by = trade_partners_total_exports_to_target
+		save_temporary_scope_as = target_market 
+		scope:target_country = {
+			add_to_variable_list = {
+				name = trade_partners_all_markets_import
+				target = scope:target_market
+			}
+		}
+	}
+}
+
+trade_partners_set_export_partners = {
+	clear_variable_list = trade_partners_all_markets_export
+	save_temporary_scope_as = target_country
+	ordered_market = {
+		order_by = trade_partners_total_imports_from_target
+		save_temporary_scope_as = target_market 
+		scope:target_country = {
+			add_to_variable_list = {
+				name = trade_partners_all_markets_export
+				target = scope:target_market
+			}
+		}
+	}
+}
+
+trade_partners_set_target_country = {
+	set_global_variable = {
+		name = trade_partners_target_market
+		value = this.market
+	}
+	trade_partners_set_export_partners = yes
+	trade_partners_set_import_partners = yes
+}

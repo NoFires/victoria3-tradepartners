@@ -1,0 +1,27 @@
+on_monthly_pulse_country = {
+	on_actions = {
+ 		on_actions_trade_partners_set_target_player
+	}
+}
+
+on_game_started_after_lobby = {
+	on_actions = {
+		on_actions_trade_partners_game_init
+	}
+}
+
+on_actions_trade_partners_set_target_player = {
+	trigger = { is_local_player = yes }
+	effect = {
+		trade_partners_set_target_country = yes
+	}
+}
+
+on_actions_trade_partners_game_init = {
+	effect = {
+		every_country = {
+			limit = { is_local_player = yes }
+			trade_partners_set_target_country = yes
+		}
+	}
+}
