@@ -1,5 +1,5 @@
-rule_trade_partners_chart_display = {
-	default = setting_show_all
+trade_partners_chart_display = {
+	default = trade_partner_show_all
 
 	# Option 1: Show all markets (Default)
 	trade_partner_show_all = {
