@@ -1,4 +1,4 @@
-﻿on_monthly_pulse = {
+on_monthly_pulse = {
 	on_actions = {
  		on_actions_trade_partners_market_update
 	}
@@ -12,11 +12,17 @@ on_game_started_after_lobby = {
 
 on_actions_trade_partners_market_update = {
 	effect = {
-		every_market = {
+		if = {
 			limit = {
-				market_trade = { value > 0 }
+				NOT = { has_game_rule = trade_partner_disabled }
 			}
-			trade_partners_market_update = yes
+			
+			every_market = {
+				limit = {
+					market_trade = { value > 0 }
+				}
+				trade_partners_market_update = yes
+			}
 		}
 	}
 }
